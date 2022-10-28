@@ -82,7 +82,8 @@ async function serverСonfig() {
           if (key2 === "added") {
             // console.log("\n\n\n\n\n\nadded\n\n\n\n\n\n");
             value2.forEach((addObj) => taskUpdates.push(addObj));
-            value2[0].id = Date().valueOf();
+            var date = new Date();
+            value2[0].id = date.valueOf();
             const val = await addTask(value2[0], "tasks");
             lastKey = val.msg;
             err = val.error;
